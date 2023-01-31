@@ -1,5 +1,4 @@
 def solution(s):
-
     flag = 0
     for ch in s:
         # 여는 괄호면 +1, 닫는 괄호면 -1
