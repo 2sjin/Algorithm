@@ -1,3 +1,4 @@
+"""
 from string import *
 
 def solution(my_string):
@@ -8,3 +9,9 @@ def solution(my_string):
         return eval(answer.strip().replace("  ", " ").replace(" ", "+"))
     except:
         return 0
+"""
+
+# join과 sum 사용하기
+def solution(my_string):
+    result = ''.join(ch if ch.isdigit() else " " for ch in my_string)
+    return sum(map(int, result.split()))
