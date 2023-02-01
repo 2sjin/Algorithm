@@ -1,3 +1,4 @@
+"""
 def solution(hp):
     ants = [0 for _ in range(hp+1)]    
     
@@ -8,3 +9,10 @@ def solution(hp):
             ants[i] = min(ants[i-1], ants[i-3], ants[i-5])+1
     
     return ants[-1]
+"""
+
+# 6마리의 경우, 5+1이든 3+3이든 똑같이 2마리
+# 그러므로 그리디 알고리즘 적용 가능
+def solution(hp):
+    return (hp // 5) + ((hp % 5) // 3) + ((hp % 5) % 3)
+    
