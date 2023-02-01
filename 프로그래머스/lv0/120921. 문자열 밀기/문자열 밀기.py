@@ -6,3 +6,4 @@ def solution(A, B):
         A = A[-1] + A[:-1]
         answer += 1
     return -1
+    
