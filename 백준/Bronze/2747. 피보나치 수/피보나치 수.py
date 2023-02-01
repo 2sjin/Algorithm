@@ -1,8 +1,16 @@
-N = int(input())
+import sys
 
-nlist = [0, 1]
+dic = {1:1, 2:1}
 
-for i in range(2, N+1):
-    nlist.append(nlist[i-2] + nlist[i-1])
+def fibo(x):
+    if x in (1, 2):
+        return 1
 
-print(nlist[N])
+    if x in dic.keys():
+        return dic[x]
+    
+    dic[x] = fibo(x-1) + fibo(x-2)
+    return dic[x]
+    
+n = int(sys.stdin.readline().rstrip())
+print(fibo(n))
