@@ -1,9 +1,11 @@
+from collections import deque
+
 def solution(arr):
-    stack = []
+    stack = deque()
     for i in arr:
         try:
             if stack[-1] != i:
                 stack.append(i)
         except:
                 stack.append(i)
-    return stack
+    return tuple(stack)
