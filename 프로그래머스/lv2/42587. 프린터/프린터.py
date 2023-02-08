@@ -1,9 +1,11 @@
+from collections import deque
+
 def solution(priorities, location):
-    queue = [f"{i}:{prio}" for i, prio in enumerate(priorities)]
-    printed = []
+    queue = deque([f"{i}:{prio}" for i, prio in enumerate(priorities)])
+    printed = deque()
     
     while queue:
-        front = queue.pop(0)
+        front = queue.popleft()
         if queue and front[-1] < max(i[-1] for i in queue):
             queue.append(front)
         else:
